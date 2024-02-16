@@ -16,7 +16,15 @@ const jest = {
         '**/jest.setup.cjs',
         '**/jest.setup.mjs',
     ],
-    ignores: ['**/node_modules/**/*', '**/build/**/*', '**/coverage/**/*', '**/dist/*', '**/.next/**/*', '**/*.d.ts'],
+    ignores: [
+        '**/node_modules/**/*',
+        '**/build/**/*',
+        '**/coverage/**/*',
+        '**/dist/*',
+        '**/.next/**/*',
+        '**/styles/system/**/*',
+        '**/*.d.ts',
+    ],
     plugins: {
         jest: eslintPluginJest,
     },

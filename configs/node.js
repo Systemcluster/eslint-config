@@ -7,7 +7,15 @@ import globals from 'globals'
 /** @type import('eslint').Linter.FlatConfig */
 const node = {
     files: ['**/*.{js,ts,cjs,mjs}'],
-    ignores: ['**/node_modules/**/*', '**/build/**/*', '**/coverage/**/*', '**/dist/*', '**/*.d.ts'],
+    ignores: [
+        '**/node_modules/**/*',
+        '**/build/**/*',
+        '**/coverage/**/*',
+        '**/dist/*',
+        '**/.next/**/*',
+        '**/styles/system/**/*',
+        '**/*.d.ts',
+    ],
     plugins: {
         'n': eslintPluginNode,
     },
@@ -20,7 +28,6 @@ const node = {
             sourceType: 'module',
         },
         globals: {
-            ...globals.es2021,
             ...globals.node,
         },
     },

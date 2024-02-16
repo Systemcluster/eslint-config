@@ -3,12 +3,18 @@
 import eslintPluginTypescript from '@typescript-eslint/eslint-plugin'
 import eslintParserTypescript from '@typescript-eslint/parser'
 
-import globals from 'globals'
-
 /** @type import('eslint').Linter.FlatConfig */
 const typescript = {
     files: ['**/*.{ts,tsx}'],
-    ignores: ['**/node_modules/**/*', '**/build/**/*', '**/coverage/**/*', '**/dist/*', '**/.next/**/*', '**/*.d.ts'],
+    ignores: [
+        '**/node_modules/**/*',
+        '**/build/**/*',
+        '**/coverage/**/*',
+        '**/dist/*',
+        '**/.next/**/*',
+        '**/styles/system/**/*',
+        '**/*.d.ts',
+    ],
     plugins: {
         '@typescript-eslint': eslintPluginTypescript,
     },
@@ -22,9 +28,7 @@ const typescript = {
             },
             sourceType: 'module',
         },
-        globals: {
-            ...globals.es2021,
-        },
+        globals: {},
     },
     settings: {
         'import/parsers': {
@@ -62,6 +66,7 @@ const typescript = {
         '@typescript-eslint/no-misused-promises': 'off',
         '@typescript-eslint/no-unnecessary-condition': 'warn',
         '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
+        '@typescript-eslint/no-useless-template-literals': 'off',
     },
 }
 

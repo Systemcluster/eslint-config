@@ -4,7 +4,6 @@ import eslintConfigEslintJs from '@eslint/js'
 import eslintConfigPrettier from 'eslint-config-prettier'
 import eslintPluginImport from 'eslint-plugin-import'
 import eslintPluginPrettier from 'eslint-plugin-prettier'
-import eslintPluginTurbo from 'eslint-plugin-turbo'
 import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 
 import globals from 'globals'
@@ -12,12 +11,19 @@ import globals from 'globals'
 /** @type import('eslint').Linter.FlatConfig */
 const base = {
     files: ['**/*.{js,cjs,mjs,jsx,ts,tsx}'],
-    ignores: ['**/node_modules/**/*', '**/build/**/*', '**/coverage/**/*', '**/dist/*', '**/.next/**/*', '**/*.d.ts'],
+    ignores: [
+        '**/node_modules/**/*',
+        '**/build/**/*',
+        '**/coverage/**/*',
+        '**/dist/*',
+        '**/.next/**/*',
+        '**/styles/system/**/*',
+        '**/*.d.ts',
+    ],
     plugins: {
         'unicorn': eslintPluginUnicorn,
         'import': eslintPluginImport,
         'prettier': eslintPluginPrettier,
-        'turbo': eslintPluginTurbo,
     },
     languageOptions: {
         parserOptions: {
