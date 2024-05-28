@@ -1,2 +1,2 @@
-export default next;
-declare const next: import('eslint').Linter.FlatConfig;
+export default react
+declare const react: import('eslint').Linter.FlatConfig

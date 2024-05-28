@@ -11,6 +11,7 @@ const turbo = {
         '**/coverage/**/*',
         '**/dist/*',
         '**/.next/**/*',
+        '**/styled-system/**/*',
         '**/styles/system/**/*',
         '**/*.d.ts',
     ],

@@ -12,6 +12,7 @@ const typescript = {
         '**/coverage/**/*',
         '**/dist/*',
         '**/.next/**/*',
+        '**/styled-system/**/*',
         '**/styles/system/**/*',
         '**/*.d.ts',
     ],
@@ -31,11 +32,11 @@ const typescript = {
         globals: {},
     },
     settings: {
-        'import/parsers': {
+        'import-x/parsers': {
             '@typescript-eslint/parser': ['.ts', '.tsx'],
         },
-        'import/resolver': {
-            typescript: {
+        'import-x/resolver': {
+            'typescript': {
                 alwaysTryTypes: true,
             },
         },
@@ -56,6 +57,7 @@ const typescript = {
                 ignorePrimitives: { string: true, number: true, bigint: true, boolean: true },
             },
         ],
+        '@typescript-eslint/no-confusing-void-expression': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-inferrable-types': 'off',
         '@typescript-eslint/no-invalid-void-type': 'off',
@@ -65,8 +67,20 @@ const typescript = {
         '@typescript-eslint/no-unsafe-return': 'off',
         '@typescript-eslint/no-misused-promises': 'off',
         '@typescript-eslint/no-unnecessary-condition': 'warn',
+        '@typescript-eslint/no-unnecessary-template-expression': 'off',
         '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
         '@typescript-eslint/no-useless-template-literals': 'off',
+        '@typescript-eslint/restrict-template-expressions': [
+            'error',
+            {
+                allowAny: true,
+                allowArray: true,
+                allowBoolean: true,
+                allowNullish: true,
+                allowNumber: true,
+                allowRegExp: true,
+            },
+        ],
     },
 }
 

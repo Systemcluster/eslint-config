@@ -1,9 +1,8 @@
 /* eslint-env node */
 
 import eslintConfigEslintJs from '@eslint/js'
-import eslintConfigPrettier from 'eslint-config-prettier'
-import eslintPluginImport from 'eslint-plugin-import'
-import eslintPluginPrettier from 'eslint-plugin-prettier'
+import eslintPluginDepend from 'eslint-plugin-depend'
+import eslintPluginImport from 'eslint-plugin-import-x'
 import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 
 import globals from 'globals'
@@ -17,16 +16,18 @@ const base = {
         '**/coverage/**/*',
         '**/dist/*',
         '**/.next/**/*',
+        '**/styled-system/**/*',
         '**/styles/system/**/*',
         '**/*.d.ts',
     ],
     plugins: {
         'unicorn': eslintPluginUnicorn,
-        'import': eslintPluginImport,
-        'prettier': eslintPluginPrettier,
+        'import-x': eslintPluginImport,
+        'depend': eslintPluginDepend,
     },
     languageOptions: {
         parserOptions: {
+            project: true,
             ecmaVersion: 'latest',
             ecmaFeatures: {
                 jsx: true,
@@ -40,9 +41,9 @@ const base = {
     settings: {},
     rules: {
         ...eslintConfigEslintJs.configs['recommended'].rules,
-        ...eslintPluginPrettier.configs['recommended'].rules,
         ...eslintPluginUnicorn.configs['recommended'].rules,
-        ...eslintConfigPrettier.rules,
+        ...eslintPluginImport.configs['recommended'].rules,
+        ...eslintPluginDepend.configs['recommended'].rules,
         'max-len': ['warn', { code: 135 }],
         'eqeqeq': ['warn', 'always', { null: 'ignore' }],
         'func-style': ['warn', 'expression'],
@@ -68,11 +69,17 @@ const base = {
         'unicorn/no-null': 'off',
         'unicorn/no-zero-fractions': 'off',
         'unicorn/no-negated-condition': 'off',
+        'unicorn/no-unnecessary-polyfills': 'off',
         'unicorn/no-useless-undefined': 'off',
+        'unicorn/number-literal-case': 'off',
         'unicorn/prefer-export-from': 'off',
         'unicorn/prefer-add-event-listener': 'off',
-        'import/order': ['warn', { 'newlines-between': 'always-and-inside-groups', 'alphabetize': { order: 'asc' } }],
-        'import/newline-after-import': 'warn',
+        'import-x/order': ['warn', { 'newlines-between': 'always-and-inside-groups', 'alphabetize': { order: 'asc' } }],
+        'import-x/named': 'off',
+        'import-x/newline-after-import': 'warn',
+        'import-x/no-cycle': 'off',
+        'import-x/no-unresolved': 'off',
+        'import-x/no-unused-modules ': 'off',
     },
 }
 

@@ -1,8 +1,9 @@
 /* eslint-env node */
 
+import eslintPluginReact from '@eslint-react/eslint-plugin'
+import eslintParserTypescript from '@typescript-eslint/parser'
+import eslintPluginCompat from 'eslint-plugin-compat'
 import eslintPluginJSXa11y from 'eslint-plugin-jsx-a11y'
-import eslintPluginReact from 'eslint-plugin-react'
-import eslintPluginReactHooks from 'eslint-plugin-react-hooks'
 
 import globals from 'globals'
 
@@ -15,15 +16,25 @@ const react = {
         '**/coverage/**/*',
         '**/dist/*',
         '**/.next/**/*',
+        '**/styled-system/**/*',
         '**/styles/system/**/*',
         '**/*.d.ts',
     ],
     plugins: {
-        'react': eslintPluginReact,
-        'react-hooks': eslintPluginReactHooks,
+        ...eslintPluginReact.configs['recommended-type-checked'].plugins,
         'jsx-a11y': eslintPluginJSXa11y,
+        'compat': eslintPluginCompat,
     },
     languageOptions: {
+        parser: eslintParserTypescript,
+        parserOptions: {
+            project: true,
+            ecmaVersion: 'latest',
+            ecmaFeatures: {
+                jsx: true,
+            },
+            sourceType: 'module',
+        },
         globals: {
             ...globals.browser,
         },
@@ -34,11 +45,9 @@ const react = {
         },
     },
     rules: {
-        ...eslintPluginReact.configs['recommended'].rules,
-        ...eslintPluginReact.configs['jsx-runtime'].rules,
-        ...eslintPluginReactHooks.configs['recommended'].rules,
+        ...eslintPluginReact.configs['recommended-type-checked'].rules,
         ...eslintPluginJSXa11y.configs['recommended'].rules,
-        'react/no-unknown-property': ['error', { ignore: ['sx'] }],
+        ...eslintPluginCompat.configs['recommended'].rules,
     },
 }
 

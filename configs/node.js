@@ -13,6 +13,7 @@ const node = {
         '**/coverage/**/*',
         '**/dist/*',
         '**/.next/**/*',
+        '**/styled-system/**/*',
         '**/styles/system/**/*',
         '**/*.d.ts',
     ],
@@ -31,7 +32,11 @@ const node = {
             ...globals.node,
         },
     },
-    settings: {},
+    settings: {
+        'import-x/resolver': {
+            'node': true,
+        },
+    },
     rules: {
         ...eslintPluginNode.configs['recommended-module'].rules,
         'n/no-missing-import': 'off',

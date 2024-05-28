@@ -1,2 +1,2 @@
-export default turbo;
-declare const turbo: import('eslint').Linter.FlatConfig;
+export default turbo
+declare const turbo: import('eslint').Linter.FlatConfig
