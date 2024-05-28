@@ -1,9 +1,7 @@
 /* eslint-env node */
 
 import eslintConfigEslintJs from '@eslint/js'
-import eslintConfigPrettier from 'eslint-config-prettier'
 import eslintPluginImport from 'eslint-plugin-import'
-import eslintPluginPrettier from 'eslint-plugin-prettier'
 import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 
 import globals from 'globals'
@@ -17,13 +15,13 @@ const base = {
         '**/coverage/**/*',
         '**/dist/*',
         '**/.next/**/*',
+        '**/styled-system/**/*',
         '**/styles/system/**/*',
         '**/*.d.ts',
     ],
     plugins: {
         'unicorn': eslintPluginUnicorn,
         'import': eslintPluginImport,
-        'prettier': eslintPluginPrettier,
     },
     languageOptions: {
         parserOptions: {
@@ -40,9 +38,7 @@ const base = {
     settings: {},
     rules: {
         ...eslintConfigEslintJs.configs['recommended'].rules,
-        ...eslintPluginPrettier.configs['recommended'].rules,
         ...eslintPluginUnicorn.configs['recommended'].rules,
-        ...eslintConfigPrettier.rules,
         'max-len': ['warn', { code: 135 }],
         'eqeqeq': ['warn', 'always', { null: 'ignore' }],
         'func-style': ['warn', 'expression'],
@@ -68,10 +64,13 @@ const base = {
         'unicorn/no-null': 'off',
         'unicorn/no-zero-fractions': 'off',
         'unicorn/no-negated-condition': 'off',
+        'unicorn/no-unnecessary-polyfills': 'off',
         'unicorn/no-useless-undefined': 'off',
+        'unicorn/number-literal-case': 'off',
         'unicorn/prefer-export-from': 'off',
         'unicorn/prefer-add-event-listener': 'off',
         'import/order': ['warn', { 'newlines-between': 'always-and-inside-groups', 'alphabetize': { order: 'asc' } }],
+        'import/named': 'off',
         'import/newline-after-import': 'warn',
     },
 }

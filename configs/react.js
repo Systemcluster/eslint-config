@@ -15,6 +15,7 @@ const react = {
         '**/coverage/**/*',
         '**/dist/*',
         '**/.next/**/*',
+        '**/styled-system/**/*',
         '**/styles/system/**/*',
         '**/*.d.ts',
     ],
@@ -38,7 +39,7 @@ const react = {
         ...eslintPluginReact.configs['jsx-runtime'].rules,
         ...eslintPluginReactHooks.configs['recommended'].rules,
         ...eslintPluginJSXa11y.configs['recommended'].rules,
-        'react/no-unknown-property': ['error', { ignore: ['sx'] }],
+        'react/no-unknown-property': ['error', { ignore: ['sx', 'css'] }],
     },
 }
 

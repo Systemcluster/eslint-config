@@ -12,6 +12,7 @@ const typescript = {
         '**/coverage/**/*',
         '**/dist/*',
         '**/.next/**/*',
+        '**/styled-system/**/*',
         '**/styles/system/**/*',
         '**/*.d.ts',
     ],
@@ -56,6 +57,7 @@ const typescript = {
                 ignorePrimitives: { string: true, number: true, bigint: true, boolean: true },
             },
         ],
+        '@typescript-eslint/no-confusing-void-expression': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/no-inferrable-types': 'off',
         '@typescript-eslint/no-invalid-void-type': 'off',
@@ -67,6 +69,17 @@ const typescript = {
         '@typescript-eslint/no-unnecessary-condition': 'warn',
         '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
         '@typescript-eslint/no-useless-template-literals': 'off',
+        '@typescript-eslint/restrict-template-expressions': [
+            'error',
+            {
+                allowAny: true,
+                allowArray: true,
+                allowBoolean: true,
+                allowNullish: true,
+                allowNumber: true,
+                allowRegExp: true,
+            },
+        ],
     },
 }
 

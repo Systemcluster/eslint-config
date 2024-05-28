@@ -1,9 +1,10 @@
 /* eslint-env node */
 
-import eslintPluginValtio from 'eslint-plugin-valtio'
+import eslintConfigPrettier from 'eslint-config-prettier'
+import eslintPluginPrettier from 'eslint-plugin-prettier'
 
 /** @type import('eslint').Linter.FlatConfig */
-const valtio = {
+const prettier = {
     files: ['**/*.{js,cjs,mjs,jsx,ts,tsx}'],
     ignores: [
         '**/node_modules/**/*',
@@ -16,13 +17,14 @@ const valtio = {
         '**/*.d.ts',
     ],
     plugins: {
-        'valtio': eslintPluginValtio,
+        'prettier': eslintPluginPrettier,
     },
     languageOptions: {},
     settings: {},
     rules: {
-        ...eslintPluginValtio.configs['recommended'].rules,
+        ...eslintPluginPrettier.configs['recommended'].rules,
+        ...eslintConfigPrettier.rules,
     },
 }
 
-export default valtio
+export default prettier

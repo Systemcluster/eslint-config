@@ -1,6 +1,6 @@
 /* eslint-env node */
 
-import eslintPluginValtio from 'eslint-plugin-valtio'
+import eslintConfigBiome from 'eslint-config-biome'
 
 /** @type import('eslint').Linter.FlatConfig */
 const valtio = {
@@ -15,13 +15,11 @@ const valtio = {
         '**/styles/system/**/*',
         '**/*.d.ts',
     ],
-    plugins: {
-        'valtio': eslintPluginValtio,
-    },
+    plugins: {},
     languageOptions: {},
     settings: {},
     rules: {
-        ...eslintPluginValtio.configs['recommended'].rules,
+        ...eslintConfigBiome.rules,
     },
 }
 
