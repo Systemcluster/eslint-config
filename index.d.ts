@@ -1,3 +1,4 @@
+export { default as astro } from './configs/astro.js'
 export { default as base } from './configs/base.js'
 export { default as biome } from './configs/biome.js'
 export { default as jest } from './configs/jest.js'

@@ -9,7 +9,7 @@ import globals from 'globals'
 
 /** @type import('eslint').Linter.FlatConfig */
 const base = {
-    files: ['**/*.{js,cjs,mjs,jsx,ts,tsx}'],
+    files: ['**/*.{js,cjs,mjs,jsx,ts,tsx,astro,mdx,vue}'],
     ignores: [
         '**/node_modules/**/*',
         '**/build/**/*',
@@ -39,6 +39,9 @@ const base = {
         },
     },
     settings: {},
+    linterOptions: {
+        reportUnusedDisableDirectives: 'warn',
+    },
     rules: {
         ...eslintConfigEslintJs.configs['recommended'].rules,
         ...eslintPluginUnicorn.configs['recommended'].rules,
@@ -60,6 +63,7 @@ const base = {
         'no-console': 'off',
         'no-undef': 'off',
         'unicorn/consistent-function-scoping': 'off',
+        'unicorn/filename-case': 'off',
         'unicorn/import-style': 'off',
         'unicorn/prevent-abbreviations': 'off',
         'unicorn/no-await-expression-member': 'off',
@@ -80,6 +84,8 @@ const base = {
         'import-x/no-cycle': 'off',
         'import-x/no-unresolved': 'off',
         'import-x/no-unused-modules ': 'off',
+        'import-x/no-named-as-default': 'off',
+        'import-x/no-named-as-default-member': 'off',
     },
 }
 

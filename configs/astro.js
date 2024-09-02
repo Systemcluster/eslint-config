@@ -1,15 +1,14 @@
 /* eslint-env node */
 
-import eslintPluginReact from '@eslint-react/eslint-plugin'
 import eslintParserTypescript from '@typescript-eslint/parser'
-import eslintPluginCompat from 'eslint-plugin-compat'
-import eslintPluginJSXa11y from 'eslint-plugin-jsx-a11y'
+import eslintParserAstro from 'astro-eslint-parser'
+import eslintPluginAstro from 'eslint-plugin-astro'
 
 import globals from 'globals'
 
 /** @type import('eslint').Linter.FlatConfig */
-const react = {
-    files: ['**/*.{js,cjs,mjs,jsx,ts,tsx,astro,mdx,vue}'],
+const astro = {
+    files: ['**/*.astro'],
     ignores: [
         '**/node_modules/**/*',
         '**/build/**/*',
@@ -21,34 +20,31 @@ const react = {
         '**/*.d.ts',
     ],
     plugins: {
-        ...eslintPluginReact.configs['recommended-type-checked'].plugins,
-        'jsx-a11y': eslintPluginJSXa11y,
-        'compat': eslintPluginCompat,
+        'astro': eslintPluginAstro,
     },
     languageOptions: {
-        parser: eslintParserTypescript,
+        parser: eslintParserAstro,
         parserOptions: {
+            parser: eslintParserTypescript,
             project: true,
             ecmaVersion: 'latest',
             ecmaFeatures: {
                 jsx: true,
             },
             sourceType: 'module',
+            extraFileExtensions: ['.astro'],
         },
         globals: {
             ...globals.browser,
+            Astro: 'readonly',
+            Fragment: 'readonly',
         },
     },
-    settings: {
-        'react': {
-            version: 'detect',
-        },
-    },
+    settings: {},
     rules: {
-        ...eslintPluginReact.configs['recommended-type-checked'].rules,
-        ...eslintPluginJSXa11y.configs['recommended'].rules,
-        ...eslintPluginCompat.configs['recommended'].rules,
+        ...eslintPluginAstro.configs['recommended'].rules,
     },
+    processor: eslintPluginAstro.processors['.astro'],
 }
 
-export default react
+export default astro
