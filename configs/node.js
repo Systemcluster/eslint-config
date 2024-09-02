@@ -40,7 +40,7 @@ const node = {
     rules: {
         ...eslintPluginNode.configs['recommended-module'].rules,
         'n/no-missing-import': 'off',
-        'n/shebang': 'off',
+        'n/hashbang': 'off',
     },
 }
 

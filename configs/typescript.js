@@ -33,7 +33,7 @@ const typescript = {
     },
     settings: {
         'import-x/parsers': {
-            '@typescript-eslint/parser': ['.ts', '.tsx'],
+            '@typescript-eslint/parser': ['.ts', '.tsx', '.astro', '.mdx', '.vue'],
         },
         'import-x/resolver': {
             'typescript': {
@@ -68,6 +68,7 @@ const typescript = {
         '@typescript-eslint/no-misused-promises': 'off',
         '@typescript-eslint/no-unnecessary-condition': 'warn',
         '@typescript-eslint/no-unnecessary-template-expression': 'off',
+        '@typescript-eslint/no-unnecessary-type-parameters': 'off',
         '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
         '@typescript-eslint/no-useless-template-literals': 'off',
         '@typescript-eslint/restrict-template-expressions': [
