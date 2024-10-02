@@ -8,7 +8,7 @@ import globals from 'globals'
 
 /** @type import('eslint').Linter.FlatConfig */
 const astro = {
-    files: ['**/*.{astro,mdx}'],
+    files: ['**/*.astro'],
     ignores: [
         '**/node_modules/**/*',
         '**/build/**/*',
@@ -32,7 +32,7 @@ const astro = {
                 jsx: true,
             },
             sourceType: 'module',
-            extraFileExtensions: ['.astro', '.mdx'],
+            extraFileExtensions: ['.astro'],
         },
         globals: {
             ...globals.browser,
