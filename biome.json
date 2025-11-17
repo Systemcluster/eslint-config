@@ -9,9 +9,6 @@
         "lineWidth": 135,
         "attributePosition": "auto"
     },
-    "organizeImports": {
-        "enabled": true
-    },
     "linter": {
         "enabled": false
     },
@@ -30,7 +27,7 @@
     },
     "overrides": [
         {
-            "include": [
+            "includes": [
                 "**/*.json"
             ],
             "formatter": {
