@@ -1,9 +1,7 @@
-/* eslint-env node */
-
 import eslintPluginTypescript from '@typescript-eslint/eslint-plugin'
 import eslintParserTypescript from '@typescript-eslint/parser'
 
-/** @type import('eslint').Linter.FlatConfig */
+/** @type import('eslint').Linter.Config */
 const typescript = {
     files: ['**/*.{ts,tsx}'],
     ignores: [
@@ -22,7 +20,7 @@ const typescript = {
     languageOptions: {
         parser: eslintParserTypescript,
         parserOptions: {
-            project: true,
+            projectService: true,
             ecmaVersion: 'latest',
             ecmaFeatures: {
                 jsx: true,
@@ -71,6 +69,8 @@ const typescript = {
         '@typescript-eslint/no-unnecessary-type-parameters': 'off',
         '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
         '@typescript-eslint/no-useless-template-literals': 'off',
+        '@typescript-eslint/no-unsafe-member-access': ['warn', { allowOptionalChaining: true }],
+        '@typescript-eslint/require-await': 'off',
         '@typescript-eslint/restrict-template-expressions': [
             'error',
             {

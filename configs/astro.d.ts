@@ -1,2 +1,2 @@
 export default astro
-declare const astro: import('eslint').Linter.FlatConfig
+declare const astro: import('eslint').Linter.Config

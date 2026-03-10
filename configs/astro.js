@@ -1,12 +1,10 @@
-/* eslint-env node */
-
 import eslintParserTypescript from '@typescript-eslint/parser'
 import eslintParserAstro from 'astro-eslint-parser'
 import eslintPluginAstro from 'eslint-plugin-astro'
 
 import globals from 'globals'
 
-/** @type import('eslint').Linter.FlatConfig */
+/** @type import('eslint').Linter.Config */
 const astro = {
     files: ['**/*.astro'],
     ignores: [
@@ -26,7 +24,7 @@ const astro = {
         parser: eslintParserAstro,
         parserOptions: {
             parser: eslintParserTypescript,
-            project: true,
+            projectService: true,
             ecmaVersion: 'latest',
             ecmaFeatures: {
                 jsx: true,

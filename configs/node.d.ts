@@ -1,2 +1,2 @@
 export default node
-declare const node: import('eslint').Linter.FlatConfig
+declare const node: import('eslint').Linter.Config

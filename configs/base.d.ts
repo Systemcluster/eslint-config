@@ -1,2 +1,2 @@
 export default base
-declare const base: import('eslint').Linter.FlatConfig
+declare const base: import('eslint').Linter.Config

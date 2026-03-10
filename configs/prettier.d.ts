@@ -1,2 +1,2 @@
 export default prettier
-declare const prettier: import('eslint').Linter.FlatConfig
+declare const prettier: import('eslint').Linter.Config

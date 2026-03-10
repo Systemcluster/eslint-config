@@ -1,2 +1,2 @@
 export default typescript
-declare const typescript: import('eslint').Linter.FlatConfig
+declare const typescript: import('eslint').Linter.Config

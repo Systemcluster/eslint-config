@@ -1,5 +1,3 @@
-/* eslint-env node */
-
 import eslintPluginReact from '@eslint-react/eslint-plugin'
 import eslintParserTypescript from '@typescript-eslint/parser'
 import eslintPluginCompat from 'eslint-plugin-compat'
@@ -7,7 +5,7 @@ import eslintPluginJSXa11y from 'eslint-plugin-jsx-a11y'
 
 import globals from 'globals'
 
-/** @type import('eslint').Linter.FlatConfig */
+/** @type import('eslint').Linter.Config */
 const react = {
     files: ['**/*.{js,cjs,mjs,jsx,ts,tsx,astro,mdx,vue}'],
     ignores: [
@@ -28,7 +26,7 @@ const react = {
     languageOptions: {
         parser: eslintParserTypescript,
         parserOptions: {
-            project: true,
+            projectService: true,
             ecmaVersion: 'latest',
             ecmaFeatures: {
                 jsx: true,

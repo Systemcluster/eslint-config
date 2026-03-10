@@ -1,8 +1,6 @@
-/* eslint-env node */
-
 import eslintPluginTurbo from 'eslint-plugin-turbo'
 
-/** @type import('eslint').Linter.FlatConfig */
+/** @type import('eslint').Linter.Config */
 const turbo = {
     files: ['**/*.{js,cjs,mjs,jsx,ts,tsx}'],
     ignores: [

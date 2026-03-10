@@ -1,9 +1,7 @@
-/* eslint-env node */
-
 import eslintConfigPrettier from 'eslint-config-prettier'
 import eslintPluginPrettier from 'eslint-plugin-prettier'
 
-/** @type import('eslint').Linter.FlatConfig */
+/** @type import('eslint').Linter.Config */
 const prettier = {
     files: ['**/*.{js,cjs,mjs,jsx,ts,tsx}'],
     ignores: [

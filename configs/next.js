@@ -1,10 +1,8 @@
-/* eslint-env node */
-
 import eslintPluginNext from '@next/eslint-plugin-next'
 
 import globals from 'globals'
 
-/** @type import('eslint').Linter.FlatConfig */
+/** @type import('eslint').Linter.Config */
 const next = {
     files: ['**/*.{js,cjs,mjs,jsx,ts,tsx}'],
     ignores: [

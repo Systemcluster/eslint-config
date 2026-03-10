@@ -1,5 +1,3 @@
-/* eslint-env node */
-
 import eslintConfigEslintJs from '@eslint/js'
 import eslintPluginDepend from 'eslint-plugin-depend'
 import eslintPluginImport from 'eslint-plugin-import-x'
@@ -7,7 +5,7 @@ import eslintPluginUnicorn from 'eslint-plugin-unicorn'
 
 import globals from 'globals'
 
-/** @type import('eslint').Linter.FlatConfig */
+/** @type import('eslint').Linter.Config */
 const base = {
     files: ['**/*.{js,cjs,mjs,jsx,ts,tsx,astro,mdx,vue}'],
     ignores: [
@@ -27,7 +25,7 @@ const base = {
     },
     languageOptions: {
         parserOptions: {
-            project: true,
+            projectService: true,
             ecmaVersion: 'latest',
             ecmaFeatures: {
                 jsx: true,
@@ -35,7 +33,7 @@ const base = {
             sourceType: 'module',
         },
         globals: {
-            ...globals.es2021,
+            ...globals.es2026,
         },
     },
     settings: {},

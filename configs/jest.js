@@ -1,10 +1,8 @@
-/* eslint-env node */
-
 import eslintPluginJest from 'eslint-plugin-jest'
 
 import globals from 'globals'
 
-/** @type import('eslint').Linter.FlatConfig */
+/** @type import('eslint').Linter.Config */
 const jest = {
     files: [
         '**/*.test.ts',
@@ -31,7 +29,7 @@ const jest = {
     },
     languageOptions: {
         globals: {
-            ...globals.es2021,
+            ...globals.es2026,
             ...globals.jest,
         },
     },

@@ -1,2 +1,2 @@
 export default react
-declare const react: import('eslint').Linter.FlatConfig
+declare const react: import('eslint').Linter.Config

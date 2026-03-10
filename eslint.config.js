@@ -1,5 +1,5 @@
 import base from './configs/base.js'
-import biome from './configs/biome.js'
 import node from './configs/node.js'
+import prettier from './configs/prettier.js'
 
-export default [base, node, biome]
+export default [base, node, prettier]

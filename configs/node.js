@@ -1,10 +1,8 @@
-/* eslint-env node */
-
 import eslintPluginNode from 'eslint-plugin-n'
 
 import globals from 'globals'
 
-/** @type import('eslint').Linter.FlatConfig */
+/** @type import('eslint').Linter.Config */
 const node = {
     files: ['**/*.{js,ts,cjs,mjs}'],
     ignores: [

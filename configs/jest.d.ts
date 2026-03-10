@@ -1,2 +1,2 @@
 export default jest
-declare const jest: import('eslint').Linter.FlatConfig
+declare const jest: import('eslint').Linter.Config

@@ -4,7 +4,7 @@
         "lib": [
             "ESNext"
         ],
-        "target": "ES2021",
+        "target": "ES2024",
         "module": "ESNext",
         "allowJs": true,
         "allowSyntheticDefaultImports": true,
