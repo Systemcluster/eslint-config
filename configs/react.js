@@ -7,7 +7,7 @@ import globals from 'globals'
 
 /** @type import('eslint').Linter.Config */
 const react = {
-    files: ['**/*.{js,cjs,mjs,jsx,ts,tsx,astro,mdx,vue}'],
+    files: ['**/*.{js,cjs,mjs,jsx,ts,tsx,astro,vue}'],
     ignores: [
         '**/node_modules/**/*',
         '**/build/**/*',
@@ -17,6 +17,7 @@ const react = {
         '**/styled-system/**/*',
         '**/styles/system/**/*',
         '**/*.d.ts',
+        '**/*.{md,mdx}/**',
     ],
     plugins: {
         ...eslintPluginReact.configs['recommended-type-checked'].plugins,

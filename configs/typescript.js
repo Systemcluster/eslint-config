@@ -13,6 +13,7 @@ const typescript = {
         '**/styled-system/**/*',
         '**/styles/system/**/*',
         '**/*.d.ts',
+        '**/*.{md,mdx}/**',
     ],
     plugins: {
         '@typescript-eslint': eslintPluginTypescript,
@@ -31,7 +32,7 @@ const typescript = {
     },
     settings: {
         'import-x/parsers': {
-            '@typescript-eslint/parser': ['.ts', '.tsx', '.astro', '.mdx', '.vue'],
+            '@typescript-eslint/parser': ['.ts', '.tsx', '.astro', '.vue'],
         },
         'import-x/resolver': {
             'typescript': {

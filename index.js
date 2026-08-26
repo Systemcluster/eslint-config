@@ -1,6 +1,7 @@
 export { default as astro } from './configs/astro.js'
 export { default as base } from './configs/base.js'
 export { default as jest } from './configs/jest.js'
+export { default as mdx } from './configs/mdx.js'
 export { default as next } from './configs/next.js'
 export { default as node } from './configs/node.js'
 export { default as prettier } from './configs/prettier.js'

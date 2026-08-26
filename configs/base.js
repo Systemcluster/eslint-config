@@ -7,7 +7,7 @@ import globals from 'globals'
 
 /** @type import('eslint').Linter.Config */
 const base = {
-    files: ['**/*.{js,cjs,mjs,jsx,ts,tsx,astro,mdx,vue}'],
+    files: ['**/*.{js,cjs,mjs,jsx,ts,tsx,astro,vue}'],
     ignores: [
         '**/node_modules/**/*',
         '**/build/**/*',
@@ -63,19 +63,24 @@ const base = {
         'unicorn/consistent-function-scoping': 'off',
         'unicorn/filename-case': 'off',
         'unicorn/import-style': 'off',
+        'unicorn/default-export-style': 'off',
+        'unicorn/name-replacements': 'off',
         'unicorn/prevent-abbreviations': 'off',
         'unicorn/no-await-expression-member': 'off',
         'unicorn/no-array-reduce': 'off',
         'unicorn/no-array-for-each': 'off',
         'unicorn/no-array-callback-reference': 'off',
+        'unicorn/no-global-object-property-assignment': 'off',
         'unicorn/no-null': 'off',
         'unicorn/no-zero-fractions': 'off',
         'unicorn/no-negated-condition': 'off',
+        'unicorn/no-top-level-side-effects': 'off',
         'unicorn/no-unnecessary-polyfills': 'off',
         'unicorn/no-useless-undefined': 'off',
         'unicorn/number-literal-case': 'off',
         'unicorn/prefer-export-from': 'off',
         'unicorn/prefer-add-event-listener': 'off',
+        'unicorn/single-line-block-comment-style': 'off',
         'import-x/order': ['warn', { 'newlines-between': 'always-and-inside-groups', 'alphabetize': { order: 'asc' } }],
         'import-x/named': 'off',
         'import-x/newline-after-import': 'warn',

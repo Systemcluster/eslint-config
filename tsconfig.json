@@ -5,7 +5,7 @@
             "ESNext"
         ],
         "target": "ES2024",
-        "module": "ESNext",
+        "module": "nodenext",
         "allowJs": true,
         "allowSyntheticDefaultImports": true,
         "composite": false,
@@ -16,7 +16,7 @@
         "incremental": true,
         "inlineSources": false,
         "isolatedModules": true,
-        "moduleResolution": "Node",
+        "moduleResolution": "nodenext",
         "preserveWatchOutput": true,
         "resolveJsonModule": true,
         "skipLibCheck": true,

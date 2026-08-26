@@ -1,6 +1,6 @@
 import eslintParserTypescript from '@typescript-eslint/parser'
-import eslintParserAstro from 'astro-eslint-parser'
-import eslintPluginAstro from 'eslint-plugin-astro'
+import * as eslintParserAstro from 'astro-eslint-parser'
+import * as eslintPluginAstro from 'eslint-plugin-astro'
 
 import globals from 'globals'
 
