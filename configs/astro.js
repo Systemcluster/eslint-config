@@ -11,11 +11,11 @@ const astro = {
         '**/node_modules/**/*',
         '**/build/**/*',
         '**/coverage/**/*',
-        '**/dist/*',
+        '**/dist/**/*',
         '**/.next/**/*',
         '**/styled-system/**/*',
         '**/styles/system/**/*',
-        '**/*.d.ts',
+        '**/*.d.{ts,cts,mts}',
     ],
     plugins: {
         'astro': eslintPluginAstro,
@@ -24,7 +24,7 @@ const astro = {
         parser: eslintParserAstro,
         parserOptions: {
             parser: eslintParserTypescript,
-            projectService: true,
+            projectService: false,
             ecmaVersion: 'latest',
             ecmaFeatures: {
                 jsx: true,
@@ -40,7 +40,7 @@ const astro = {
     },
     settings: {},
     rules: {
-        ...eslintPluginAstro.configs['recommended'].rules,
+        ...Object.assign({}, ...eslintPluginAstro.configs['recommended'].map((config) => config.rules)),
     },
     processor: eslintPluginAstro.processors['.astro'],
 }

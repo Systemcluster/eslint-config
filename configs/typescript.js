@@ -3,16 +3,16 @@ import eslintParserTypescript from '@typescript-eslint/parser'
 
 /** @type import('eslint').Linter.Config */
 const typescript = {
-    files: ['**/*.{ts,tsx}'],
+    files: ['**/*.{ts,cts,mts,tsx}'],
     ignores: [
         '**/node_modules/**/*',
         '**/build/**/*',
         '**/coverage/**/*',
-        '**/dist/*',
+        '**/dist/**/*',
         '**/.next/**/*',
         '**/styled-system/**/*',
         '**/styles/system/**/*',
-        '**/*.d.ts',
+        '**/*.d.{ts,cts,mts}',
         '**/*.{md,mdx}/**',
     ],
     plugins: {
@@ -32,7 +32,7 @@ const typescript = {
     },
     settings: {
         'import-x/parsers': {
-            '@typescript-eslint/parser': ['.ts', '.tsx', '.astro', '.vue'],
+            '@typescript-eslint/parser': ['.ts', '.cts', '.mts', '.tsx', '.astro', '.vue'],
         },
         'import-x/resolver': {
             'typescript': {
@@ -41,7 +41,7 @@ const typescript = {
         },
     },
     rules: {
-        ...eslintPluginTypescript.configs['eslint-recommended'].rules,
+        ...eslintPluginTypescript.configs['eslint-recommended'].overrides[0].rules,
         ...eslintPluginTypescript.configs['recommended-type-checked'].rules,
         ...eslintPluginTypescript.configs['strict-type-checked'].rules,
         ...eslintPluginTypescript.configs['stylistic-type-checked'].rules,
@@ -69,7 +69,6 @@ const typescript = {
         '@typescript-eslint/no-unnecessary-template-expression': 'off',
         '@typescript-eslint/no-unnecessary-type-parameters': 'off',
         '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_', varsIgnorePattern: '^_' }],
-        '@typescript-eslint/no-useless-template-literals': 'off',
         '@typescript-eslint/no-unsafe-member-access': ['warn', { allowOptionalChaining: true }],
         '@typescript-eslint/require-await': 'off',
         '@typescript-eslint/restrict-template-expressions': [

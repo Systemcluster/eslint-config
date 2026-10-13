@@ -7,16 +7,16 @@ import globals from 'globals'
 
 /** @type import('eslint').Linter.Config */
 const react = {
-    files: ['**/*.{js,cjs,mjs,jsx,ts,tsx,astro,vue}'],
+    files: ['**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'],
     ignores: [
         '**/node_modules/**/*',
         '**/build/**/*',
         '**/coverage/**/*',
-        '**/dist/*',
+        '**/dist/**/*',
         '**/.next/**/*',
         '**/styled-system/**/*',
         '**/styles/system/**/*',
-        '**/*.d.ts',
+        '**/*.d.{ts,cts,mts}',
         '**/*.{md,mdx}/**',
     ],
     plugins: {

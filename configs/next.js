@@ -4,16 +4,16 @@ import globals from 'globals'
 
 /** @type import('eslint').Linter.Config */
 const next = {
-    files: ['**/*.{js,cjs,mjs,jsx,ts,tsx}'],
+    files: ['**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'],
     ignores: [
         '**/node_modules/**/*',
         '**/build/**/*',
         '**/coverage/**/*',
-        '**/dist/*',
+        '**/dist/**/*',
         '**/.next/**/*',
         '**/styled-system/**/*',
         '**/styles/system/**/*',
-        '**/*.d.ts',
+        '**/*.d.{ts,cts,mts}',
     ],
     plugins: {
         '@next/next': eslintPluginNext,

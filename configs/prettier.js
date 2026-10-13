@@ -3,16 +3,16 @@ import eslintPluginPrettier from 'eslint-plugin-prettier'
 
 /** @type import('eslint').Linter.Config */
 const prettier = {
-    files: ['**/*.{js,cjs,mjs,jsx,ts,tsx}'],
+    files: ['**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'],
     ignores: [
         '**/node_modules/**/*',
         '**/build/**/*',
         '**/coverage/**/*',
-        '**/dist/*',
+        '**/dist/**/*',
         '**/.next/**/*',
         '**/styled-system/**/*',
         '**/styles/system/**/*',
-        '**/*.d.ts',
+        '**/*.d.{ts,cts,mts}',
     ],
     plugins: {
         'prettier': eslintPluginPrettier,

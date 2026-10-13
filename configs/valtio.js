@@ -2,16 +2,16 @@ import eslintPluginValtio from 'eslint-plugin-valtio'
 
 /** @type import('eslint').Linter.Config */
 const valtio = {
-    files: ['**/*.{js,cjs,mjs,jsx,ts,tsx}'],
+    files: ['**/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx}'],
     ignores: [
         '**/node_modules/**/*',
         '**/build/**/*',
         '**/coverage/**/*',
-        '**/dist/*',
+        '**/dist/**/*',
         '**/.next/**/*',
         '**/styled-system/**/*',
         '**/styles/system/**/*',
-        '**/*.d.ts',
+        '**/*.d.{ts,cts,mts}',
     ],
     plugins: {
         'valtio': eslintPluginValtio,

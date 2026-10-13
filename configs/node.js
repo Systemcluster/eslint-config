@@ -4,16 +4,16 @@ import globals from 'globals'
 
 /** @type import('eslint').Linter.Config */
 const node = {
-    files: ['**/*.{js,ts,cjs,mjs}'],
+    files: ['**/*.{js,ts,cts,mts,cjs,mjs}'],
     ignores: [
         '**/node_modules/**/*',
         '**/build/**/*',
         '**/coverage/**/*',
-        '**/dist/*',
+        '**/dist/**/*',
         '**/.next/**/*',
         '**/styled-system/**/*',
         '**/styles/system/**/*',
-        '**/*.d.ts',
+        '**/*.d.{ts,cts,mts}',
     ],
     plugins: {
         'n': eslintPluginNode,
@@ -39,6 +39,7 @@ const node = {
         ...eslintPluginNode.configs['recommended-module'].rules,
         'n/no-missing-import': 'off',
         'n/hashbang': 'off',
+        'n/no-unpublished-import': 'off',
     },
 }
 
