@@ -48,6 +48,7 @@ const typescript = {
         '@typescript-eslint/ban-ts-comment': 'off',
         '@typescript-eslint/dot-notation': 'off',
         '@typescript-eslint/class-literal-property-style': 'off',
+        '@typescript-eslint/consistent-type-definitions': 'off',
         '@typescript-eslint/prefer-nullish-coalescing': [
             'warn',
             {
